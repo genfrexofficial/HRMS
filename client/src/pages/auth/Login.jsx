@@ -186,16 +186,6 @@ const Login = () => {
     }
   };
 
-  const handleQuickSelect = (role) => {
-    setErrorMsg('');
-    if (role === 'ADMIN') {
-      setEmail('admin@genfrex.com');
-      setPassword('Admin@123');
-    } else if (role === 'HR') {
-      setEmail('hr@genfrex.com');
-      setPassword('Hr@123');
-    }
-  };
 
   return (
     <div className="h-screen w-screen max-h-screen overflow-hidden flex flex-col lg:flex-row bg-[#040711] text-slate-100 relative select-none">
@@ -357,42 +347,6 @@ const Login = () => {
               </p>
             </div>
 
-            {/* Quick Demo Credentials Switcher */}
-            <div className="mb-3.5 p-2 rounded-xl bg-slate-900/90 border border-white/10 shadow-inner">
-              <div className="flex items-center justify-between mb-1.5 px-1">
-                <span className="text-[10px] font-bold text-slate-400 uppercase tracking-wider flex items-center gap-1">
-                  <Sparkles className="w-3 h-3 text-cyan-400" />
-                  Quick Role Login
-                </span>
-                <span className="text-[9px] text-slate-500">1-Click Auto Fill</span>
-              </div>
-              <div className="grid grid-cols-2 gap-2">
-                <button
-                  type="button"
-                  onClick={() => handleQuickSelect('ADMIN')}
-                  className={`py-1.5 px-2 rounded-lg border text-[11px] font-semibold flex items-center justify-center gap-1.5 transition-all ${
-                    email === 'admin@genfrex.com'
-                      ? 'border-blue-500 bg-blue-600/30 text-blue-200 shadow-sm shadow-blue-500/20'
-                      : 'border-white/10 bg-slate-800/60 hover:bg-slate-800 text-slate-300 hover:text-white'
-                  }`}
-                >
-                  <ShieldCheck className="w-3.5 h-3.5 text-blue-400" />
-                  <span>Admin</span>
-                </button>
-                <button
-                  type="button"
-                  onClick={() => handleQuickSelect('HR')}
-                  className={`py-1.5 px-2 rounded-lg border text-[11px] font-semibold flex items-center justify-center gap-1.5 transition-all ${
-                    email === 'hr@genfrex.com' || email === 'anisha@genfrex.com'
-                      ? 'border-cyan-500 bg-cyan-600/30 text-cyan-200 shadow-sm shadow-cyan-500/20'
-                      : 'border-white/10 bg-slate-800/60 hover:bg-slate-800 text-slate-300 hover:text-white'
-                  }`}
-                >
-                  <UserCheck className="w-3.5 h-3.5 text-cyan-400" />
-                  <span>HR Lead</span>
-                </button>
-              </div>
-            </div>
 
             {errorMsg && (
               <div className="mb-3 p-2.5 rounded-lg bg-rose-500/10 border border-rose-500/30 text-rose-300 text-xs flex items-center gap-2 animate-card-entrance">
